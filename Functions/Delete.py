@@ -1,3 +1,5 @@
+from Functions.Search import search_emails
+
 def delete_emails(gmail_service, email_results):
     total_emails = len(email_results)
     print(f"Total emails found: {total_emails}")
@@ -17,3 +19,14 @@ def delete_emails(gmail_service, email_results):
         print("Emails deleted successfully.")
     else:
         print("Deletion action cancelled.")
+
+
+def search_trash_emails(gmail_service, query):
+    # Search for emails in the trash
+    return search_emails(gmail_service, query, labels=['TRASH'])
+
+def clean_trash_emails(gmail_service):
+    # Clean emails from the trash
+    trash_query = "in:trash"
+    trash_emails = search_trash_emails(gmail_service, trash_query)
+    delete_emails(gmail_service, trash_emails)

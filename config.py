@@ -7,5 +7,5 @@ API_VERSION = 'v1'
 SCOPES = ['https://mail.google.com/']
 
 # Search query.
-SEARCH_QUERY = "from:updates-noreply@linkedin.com"
+# SEARCH_QUERY = "from:notification@facebookmail.com"
 
